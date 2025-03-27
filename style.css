@@ -87,7 +87,7 @@ grid-row-gap: 8px;
 
 
 #imageSvg {
-    width: 52px;
+    width: 42px;
 
 }
 
@@ -95,6 +95,7 @@ grid-row-gap: 8px;
 .left {
     background-color: #616161;
     color: #A5A5A5;
+    font-size: 28px;
 }
 
 .right {
@@ -170,7 +171,7 @@ grid-row-gap: 8px;
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    font-size: 50px;
+    font-size: 40px;
     border: none;
     color: #ffffff;
     background-color: #005DB2;
@@ -182,9 +183,13 @@ grid-row-gap: 8px;
     height: 85px;
 }
 
-div:hover {
-    opacity: 0.7;
+button {
+    border: none;
     cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.7;
 }
 
 
