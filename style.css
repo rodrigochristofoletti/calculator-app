@@ -27,6 +27,7 @@ body {
     box-shadow: 26px -19px 16px 4px rgba(0,107,181,0.33);
     -webkit-box-shadow: 26px -19px 16px 4px rgba(0,107,181,0.33);
     -moz-box-shadow: 26px -19px 16px 4px rgba(0,107,181,0.33);
+    transition: background-color 0.5s ease-in-out;
 }
 
 .top-screen {
@@ -46,7 +47,7 @@ body {
 }
 
 .result {
-    font-size: 40px;
+    font-size: 48px;
     color: #ffffff;
 }
 
@@ -203,6 +204,7 @@ button:hover {
 .equal-secondColor {
     background-color: #19ACFF;
     color: #B2DAFF;
+ 
 }
 
 .left-secondColor {
@@ -210,6 +212,13 @@ button:hover {
     color: #858585;
 }
 
+.result-secondColor {
+    color: #424242;
+}
+
+.number, .special, .dot, .left, .result {
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
 
 .div1 { grid-area: 1 / 1 / 2 / 2; }
 .div2 { grid-area: 1 / 2 / 2 / 3; }
