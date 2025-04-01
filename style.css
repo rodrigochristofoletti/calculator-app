@@ -239,3 +239,34 @@ button:hover {
 .div18 { grid-area: 4 / 4 / 6 / 5; }
 .div17 { grid-area: 4 / 4 / 5 / 5; }
 .div19 { grid-area: 3 / 4 / 4 / 5; }
+
+
+/* Media Queries for Responsive Design */
+@media (max-width: 910px) {
+    .main-div {
+        padding-bottom: 55px; 
+        position: relative;
+    }
+
+    .left-button, .right-button {
+        position: absolute;
+        bottom: 24%; 
+        width: 60px; 
+        height: 60px;
+        font-size: 30px;
+    }
+
+    .left-button {
+        left: 30%;
+    }
+    .right-button {
+        right: 30%;
+    }
+
+    .left-button:hover, .right-button:hover {
+        opacity: 0.7;
+        width: 60px; 
+        height: 60px;
+    }
+
+}
