@@ -243,24 +243,20 @@ button:hover {
 
 /* Media Queries for Responsive Design */
 @media (max-width: 910px) {
-    .main-div {
-        padding-bottom: 55px; 
-        position: relative;
-    }
+  
 
     .left-button, .right-button {
-        position: absolute;
-        bottom: 24%; 
+        position: absolute; 
         width: 60px; 
         height: 60px;
         font-size: 30px;
     }
 
     .left-button {
-        left: 30%;
+        left: 1%;
     }
     .right-button {
-        right: 30%;
+        right: 1%;
     }
 
     .left-button:hover, .right-button:hover {
@@ -269,4 +265,57 @@ button:hover {
         height: 60px;
     }
 
+}
+
+@media (max-width: 600px) {
+  
+
+    .grid-section {
+        height: 50%;
+    }
+
+    .top-screen {
+        height: 15%;
+    }
+
+    .result {
+        font-size: 36px;
+    }
+
+    .number, .simbols, .special, .dot, .left, .result {
+        font-size: 24px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .zero {
+        width: 120px;
+        height: 50px;
+    }
+}
+@media (max-width: 400px) {
+   
+
+    .grid-section {
+        height: 40%;
+    }
+
+    .top-screen {
+        height: 10%;
+    }
+
+    .result {
+        font-size: 28px;
+    }
+
+    .number, .simbols, .special, .dot, .left, .result {
+        font-size: 20px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .zero {
+        width: 100px;
+        height: 40px;
+    }
 }
