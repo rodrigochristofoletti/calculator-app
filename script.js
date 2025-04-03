@@ -49,93 +49,52 @@ leftButton.addEventListener("click", () => {
 
 });
 
-// CALCULATOR FUNCTION *********************
+let lastResult = null; 
+
 allKeys.addEventListener("click", (e) => {
-    
     if (e.target.tagName === "BUTTON") {
-        if (e.target.classList.contains("number")) {
-            
-            console.log(`Number clicked: ${e.target.innerText}`);
-
-            if ( calculatorScreen.innerText.length >= MAX_LENGTH) {
-                return;
-            }
-
-            calculatorScreen.innerText === "0" ? calculatorScreen.innerHTML = e.target.innerText : calculatorScreen.innerHTML += e.target.innerText;
-
-        } else if (e.target.classList.contains("special")) {
-            console.log(`Special key clicked: ${e.target.innerText}`);
         
-        }
-
-         //Dot button /***************** */
-        if ( e.target.classList.contains("dot")){
-           if (calculatorScreen.length <= 0) {
-            return;
-           } else {
-            calculatorScreen.innerHTML += ".";
-           }}
-
-        //Plus button ***************************
-
-        if ( e.target.classList.contains("plus")){
-         
+        //  Number Click ************************
+        if (e.target.classList.contains("number")) {
+            if (calculatorScreen.innerText.length >= MAX_LENGTH) return;
             
-            if (calculatorScreen.innerHTML.length <= 0) {
-                return;
-               } else {
-                calculatorScreen.innerHTML += `<span class="operator-highlight">+</span>`;
-             }
-        }
-   
-        // Minus button *****************
-        if ( e.target.classList.contains("minus")){
-            if (calculatorScreen.length <= 0) {
-                return;
-               } else {
-                calculatorScreen.innerHTML += `<span class="operator-highlight">-</span>`;
-               }
+            if (calculatorScreen.innerText === "0" || lastResult !== null) {
+                calculatorScreen.innerText = e.target.innerText;
+                lastResult = null; 
+            } else {
+                calculatorScreen.innerText += e.target.innerText;
+            }
         }
 
-        // Divide button *************
-        if ( e.target.classList.contains("divide")){
-            if (calculatorScreen.length <= 0) {
-                return;
-               } else {
-                calculatorScreen.innerHTML += `<span class="operator-highlight">/</span>`;
-               }
-        }
-
-
-        // Multiply button *********
-
-        if ( e.target.classList.contains("multiply")){
-            if (calculatorScreen.length <= 0) {
-                return;
-               } else {
-                calculatorScreen.innerHTML += `<span class="operator-highlight">*</span>`;
-               }
+        //  Special Characters (+, -, *, /)*********************
+        else if (e.target.classList.contains("special")) {
+            if (lastResult !== null) {
+                calculatorScreen.innerText = lastResult + e.target.innerText;
+                lastResult = null; 
+            } else if (calculatorScreen.innerText.length > 0) {
+                calculatorScreen.innerText += e.target.innerText;
+            }
         }
 
         // Equal button ******************
-
         if (e.target.classList.contains("equal")) {
             let screenText = calculatorScreen.innerText;
-        
             try {
-                let resultValue = eval(screenText); 
+                let resultValue = eval(screenText);
+                lastResult = resultValue; 
                 result.innerText = resultValue.toLocaleString("en-US"); 
             } catch (error) {
                 result.innerText = "Error";
             }
         }
-
     }
+
     //  Clean All Button **************************
 
-    if ( e.target.innerText === "Ac") {
+    if (e.target.innerText === "Ac") {
         result.innerHTML = "";
-        calculatorScreen.innerHTML = 0;
+        calculatorScreen.innerHTML = "0";
+        lastResult = null; 
     }
 
      // Erase Button **************************
@@ -145,13 +104,17 @@ allKeys.addEventListener("click", (e) => {
         
        
         if (currentResult.length > 1) {
-            calculatorScreen.innerText = currentResult.slice(0, -1); 
+            calculatorScreen.innerText = curren5tResult.slice(0, -1); 
         } else {
             result.innerText = "0"; 
             calculatorScreen.innerHTML = 0;
         };
 };
 });
+
+
+
+
 
 document.addEventListener("keydown", (e) => {
     const key = e.key; 
